@@ -24,3 +24,18 @@
 -- Explanation
 
 -- The Binary Tree below illustrates the sample:
+
+/*
+Enter your query here.
+Please append a semicolon ";" at the end of the query and enter your query in a single line to avoid error.
+*/
+
+SELECT N,
+CASE 
+WHEN P IS NULL THEN "Root"
+WHEN (SELECT COUNT(*)FROM BST WHERE P=B.N )>0 THEN "Inner"
+ELSE
+"Leaf"
+END AS "a"
+FROM BST B
+ORDER BY N;
